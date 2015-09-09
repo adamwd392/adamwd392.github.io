@@ -37,7 +37,7 @@ d3.select(".chart")
   .selectAll("div")
     .data(data.features)
   .enter().append("div")
-    .style("width", function(d) { return (d.properties.mag)*100 + "px"; })
+    .style("width", function(d) { return (d.properties.mag*100) + "px"; })
     .text(function(d) { return d.properties.mag; });
 
   // "data" is an Object with properties (you can inspect "data" in the developer's console)
