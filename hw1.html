@@ -31,7 +31,7 @@ d3.json(url, function(error, quakes) {
 
  var x = d3.scale.linear()
     .domain([0, d3.max(data.feature)])
-    .range([0, d3.max(data.features) * 10]);
+    .range([0, d3.max(data.features)]);
 
 d3.select(".chart")
   .selectAll("div")
