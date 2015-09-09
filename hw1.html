@@ -31,13 +31,13 @@ d3.json(url, function(error, quakes) {
 
  var x = d3.scale.linear()
     .domain([0, d3.max(data.features)])
-    .range([0, d3.max(data.features)]);
+    .range([0, d3.max(data.features)]*10);
 
 d3.select(".chart")
   .selectAll("div")
     .data(data.features)
   .enter().append("div")
-    .style("width", function(d) { return x(d.properties.mag) + "px"; })
+    .style("width", function(d) { return x(d.properties.mag*100) + "px"; })
     .text(function(d) { return d.properties.mag; });
 
   // "data" is an Object with properties (you can inspect "data" in the developer's console)
