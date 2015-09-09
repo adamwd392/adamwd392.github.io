@@ -30,12 +30,12 @@ d3.json(url, function(error, quakes) {
   data = quakes;  // Setting the value of the global here.
 
  var x = d3.scale.linear()
-    .domain([0, d3.max(data.feature)])
+    .domain([0, d3.max(data.features)])
     .range([0, d3.max(data.features)]);
 
 d3.select(".chart")
   .selectAll("div")
-    .data(data.feature)
+    .data(data.features)
   .enter().append("div")
     .style("width", function(d) { return x(d.properties.mag) + "px"; })
     .text(function(d) { return d.properties.mag; });
